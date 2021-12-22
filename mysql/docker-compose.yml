@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  db:
+    platform: linux/x86_64
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - 3306
+    command: --init-file /data/application/database-setup.sql
+    volumes:
+      - ./database-setup.sql:/data/application/database-setup.sql
