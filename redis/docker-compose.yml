@@ -9,5 +9,9 @@ services:
     expose:
       - 6379
     volumes:
-      - $PWD/redis-data:/var/lib/redis
-      - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+      - redis-data:/var/lib/redis
+      - redis-conf:/usr/local/etc/redis/redis.conf
+
+volumes:
+  redis-data:
+  redis-conf:
